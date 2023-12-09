@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="profile-links">
+                    <img src="/static/img/blankprofile.jfif" alt="">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Archives</a></li>
+                    <li><a href="#">Digital IDs</a></li>
+                    {% if bo %}
+                    <li><a href="/adminpanel">Admin Notice Panel</a></li>
+                    {% endif %}
+                    <li>
+                    </li>
+                </div>
+            </div>
+            
+                <div class="col-md-6">
+                    <div class="mt-custum">
+                        <div class="details">
+                            <div class="row">
+                                <div class="col-8">
+                                    Name
+                                </div>
+                                <div class="col-4">
+                                    {% for lmao in cred %}
+                                    {{ lmao.name }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <div class="row">
+                                <div class="col-8">
+                                    Email
+                                </div>
+                                <div class="col-4">
+                                    {% for lmao in cred %}
+                                    {{ lmao.email }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <div class="row">
+                                <div class="col-8">
+                                    Password
+                                </div>
+                                <div class="col-4">
+                                    {% for lmao in cred %}
+                                    {{ lmao.password }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">About Me</h3>
+                    <p class="text-justify">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore assumenda doloribus, omnis molestias earum voluptatem dignissimos, repudiandae sit repellat velit sunt ab laboriosam aperiam quisquam, distinctio similique veniam voluptate totam temporibus provident! Laudantium consectetur, ab earum suscipit reprehenderit assumenda aliquam repellendus accusantium. Culpa in praesentium atque dignissimos officia nihil sed?
+                    </p>
+                </div>
+        </div>
+    </div>
+
+
+{% endblock body %}

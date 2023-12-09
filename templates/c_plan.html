@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block body %}
+<div class="container-fluid mb-3">
+
+    <h1 class="text-center"></h1>
+</div>
+
+<div class="container py-4">
+    <form method="post" action="/c_plan">
+        {% csrf_token %}
+            <div class="mb-3">
+                <label for="head" class="form-label">Head</label>
+                <input type="text" class="form-control" id="head" name="head" aria-describedby="nameHelp" placeholder="Enter Your Topic">
+                <div id="nameHelp" class="form-text">
+                    This will be displayed as the header for your plan.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="mon" class="form-label">Month</label>
+                <input type="text" class="form-control" id="mon" name="mon" aria-describedby="emailHelp" placeholder="Enter the month for this plan.">
+                <div id="emailHelp" class="form-text">
+                    Please only enter int values.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="day" class="form-label">Date</label>
+                <input type="number" class="form-control" id="day" name="day" aria-describedby="phoneHelp" placeholder="Enter the day.">
+                <div id="phoneHelp" class="form-text">
+                    Please only enter int values.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="body" class="form-label">Body of the plan</label>
+                <textarea type="text" class="form-control" id="body" name="body"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+{% endblock body %}

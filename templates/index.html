@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+
+<div class="container py-4">
+
+  <header class="pb-3 mb-4 border-bottom">
+    <a class="d-flex align-items-center">
+      <span class="fs-4">
+        <strong>Welcome, {{greet}} </strong>
+      </span>
+      
+      <div class="container">  
+        <button class="btn btn-primary float-right" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+          Ongoing Events
+        </button>
+      </div>
+    </a>
+  </header>
+
+  
+
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel"> Ongoing Events </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <header class="pb-3 mb-4 border-bottom">
+        <a class="d-flex align-items-center">
+          <span class="fs-4">
+            <strong> 
+              {{hd.topic}}
+            </strong>
+          </span>
+        </a>
+      </header>
+      <p>
+        <a class="d-flex align-items-center">
+          <p>
+            {{hd.body}}
+          </p>
+        </a>
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="container py-3">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="p-5 mb-4 bg-body-tertiary text-bg-dark rounded-3" style="
+        background-image: url('/static/img/jmbo1.jfif');
+        background-size: cover;
+        height: 100%" >
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold"><u><strong>Academic Companion and Explorer</strong></u></h1>
+            <p class="col-md-8 fs-4">A Student-Based Personalized Website:
+              <br>
+              It provides ease of access to the users, which consists of many quality of life features with some flexibility for the users.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-bg-dark rounded-3" style="
+      background-image: url('/static/img/jmbo2.jfif');
+      background-size: cover;
+      height: 100%" >
+        <h2><u> Check out the Forums </u></h2>
+        <h6>
+          View the Forums.
+          <br>
+          Be sure to discuss with other users incase of queries, etc.
+        </h6>
+        <a href="forum_index" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Forum</a>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-bg-dark rounded-3" style="
+      background-image: url('/static/img/jmbo3.jfif');
+      background-size: cover;
+      height: 100%" >
+        <h2><u> Check out the Planner </u></h2>
+        <h6>
+          View the Planner.
+          <br>
+          Look for new events and other interesting topics.
+        </h6>
+        <a href="planner" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Planner</a>
+      </div>
+    </div>
+  </div> 
+
+  
+</div>
+  
+{% endblock body %}

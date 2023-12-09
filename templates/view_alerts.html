@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+View Alert
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container">
+
+    <div class="list-group py-5">
+        <header class="pb-3 mb-4 border-bottom">
+            <a class="d-flex align-items-center">
+            <span class="fs-4">
+                <strong> Existing Events </strong>
+            </span>
+            </a>
+        </header>
+
+        {% for i in alert %}
+        <div class="container py-2">
+            <a class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between py-2">
+                <h5 class="mb-1">{{i.topic}}</h5>
+                <small>{{i.created_at}} , display-{{i.disp}}</small>
+            </div>
+            <p class="mb-1">{{i.body}}</p>
+            <small>
+                <a href="{{i.id}}" class="card-link">Delete</a>
+            </small>
+            <small class="ml-3">
+                <a href="act/{{i.id}}" class="card-link">Set as Active</a>
+            </small>
+            <small class="ml-3">
+                <a href="inact/{{i.id}}" class="card-link">Set as Inactive</a>
+            </small>
+            </a>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+</div>
+
+
+{% endblock body %}

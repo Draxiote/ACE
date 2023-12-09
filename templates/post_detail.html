@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+          {% for forum_d in forum %}
+        <h1>{% block title %} {{ forum_d.category }} {% endblock title %}</h1>
+        <p class=" text-muted">{{ forum_d.name }} | {{ forum_d.created_at }}</p>
+        <p class="card-text ">{{ forum_d.body | safe }}</p>
+          {% endfor %}
+      </div>
+    </div>
+
+
+    {% block sidebar %} 
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4 float-right">
+          <div class="card my-4">
+              <h5 class="card-header">Functions</h5>
+                  <div class="card-body">
+                    {% for forum_d in forum %}
+                  <p class="card-text"> Click this button to delete the forum </p>
+                  <a href="post_detail/d/{{forum_d.id}}" class="btn btn-danger">Delete</a>
+                    {% endfor %}
+                  </div>
+          </div>
+      </div>
+
+    {% endblock sidebar %}
+
+
+  </div>
+</div>
+
+{% endblock content %}

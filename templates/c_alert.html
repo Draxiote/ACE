@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Create Forum
+{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid px-0">
+    <div class="container py-4">
+        <form method="post" action="/c_alert">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="heading" class="form-label">Heading</label>
+                <input type="heading" class="form-control" id="heading" name="heading" placeholder="Enter the Heading">
+            </div>
+
+            <div class="mb-3">
+                <label for="desc" class="form-label">Description</label>
+                <textarea type="desc" class="form-control" id="desc" name="desc"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+  
+{% endblock body %}

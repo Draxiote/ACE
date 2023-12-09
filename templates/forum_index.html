@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+
+            {% for forums in forum_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ forums.title }}</h2>
+                    <p class="card-text h6">{{ forums.name }} | {{ forums.created_at }} </p>  
+                    <p class="card-text">{{forums.body|slice:":200" }}</p>
+                    <input type="hidden" name='row_value' value="{{forums.id}}">
+                     <a class='btn btn-primary' href="post_detail/{{forums.id}}">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% block sidebar %} 
+
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4 float-right">
+            <div class="card my-4">
+                    <h5 class="card-header">Create Forum</h5>
+                    <div class="card-body">
+                    <p class="card-text"> Click this button to create a forum </p>
+                    <a href="c_forum" class="btn btn-primary">Create</a>
+                    </div>
+            </div>
+        </div>
+
+        {% endblock sidebar %}
+
+
+
+    </div>
+</div>
+{%endblock%}
