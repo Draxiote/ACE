@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+
+            {% for p1 in pl %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ p1.head }}</h2>
+                    <p class="card-text h6">{{ p1.body }} | {{ p1.created_at }} </p>  
+                    <p class="card-text">{{p1.body|slice:":200" }}</p>
+                    <input type="hidden" name='row_value' value="{{p1.id}}">
+                     <a class='btn btn-primary' href="post_detail/{{p1.id}}">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+{%endblock%}
