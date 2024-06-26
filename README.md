@@ -16,7 +16,6 @@ It was a project made with Python and Django for the backend + Bootstrap (HTML +
 
 ### Install Dependencies
 ```
-
 First, install Python.
 Then, install Django.
 ```
